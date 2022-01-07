@@ -36,6 +36,8 @@ if a coefficient set has a large enough Lyapunov exponent, the equations are eac
 
 it is estimated that around 1.6% of the possible coefficient sets are chaotic, or approximately 10<sup>15</sup> cases. as Sprott writes, "viewing them all at a rate of one per second would require over 30 million years!" it is highly likely that all of the images posted by this bot are unique.
 
+note: the metadata for each image should contain the letter-code in the "title" field
+
 ### sample images
 
 AGVTEVQRUITD
