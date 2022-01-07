@@ -24,8 +24,8 @@ thus, each image's associated 12-letter string can be translated into its associ
 
 ### sample images
 
-[AGVTEVQRUITD](/sample_imgs/swallow.png)
+[AGVTEVQRUITD](https://github.com/leebeckw/strangeattrbot/blob/main/sample_imgs/swallow.png?raw=true)
 AGVTEVQRUITD
 
-[VKKUKGGBOLLN](/sample_imgs/tri.png)
+[VKKUKGGBOLLN](https://github.com/leebeckw/strangeattrbot/blob/main/sample_imgs/tri.png?raw=true)
 VKKUKGGBOLLN
