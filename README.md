@@ -24,7 +24,7 @@ the majority of coefficients are likely to produce uninteresting behavior (conve
 
 so, if you came up with a certain 12-letter word or combination of words, it is likely that it would not demonstrate chaotic behavior.
 
-in order to identify the coefficients for which these equations demonstrate chaotic behavior (a complicated, yet bounded set of points), we can calculate the Lyapunov exponent.
+in order to identify the coefficients for which these equations demonstrate chaotic behavior (aka produce a complicated, yet bounded set of points), we can calculate the Lyapunov exponent.
 
 the Lyapunov exponent is a measure of chaotic behavior. it is calculated by measuring the distance between the solutions sets for two different initial conditions over time. in a chaotic system, the difference betweeen the two solution sets grows exponentially over time. 
 
