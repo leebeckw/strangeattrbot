@@ -24,8 +24,8 @@ thus, each image's associated 12-letter string can be translated into its associ
 
 ### sample images
 
-[](/swallow.png)
+[AGVTEVQRUITD](/sample_imgs/swallow.png)
 AGVTEVQRUITD
 
-[](/tri.png)
+[VKKUKGGBOLLN](/sample_imgs/tri.png)
 VKKUKGGBOLLN
