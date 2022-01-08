@@ -1,21 +1,5 @@
 import random
-import matplotlib.pyplot as plt
-import tweepy
-import os
 from math import log2, sqrt
-from dotenv import load_dotenv
-
-# load constants from .env file
-load_dotenv()
-
-# twitter api keys
-CONSUMER_KEY = os.getenv("CONSUMER_KEY")
-CONSUMER_SECRET = os.getenv("CONSUMER_SECRET")
-KEY = os.getenv("KEY")
-SECRET = os.getenv("SECRET")
-
-# absolute path for cron
-PATH = os.getenv("ABS_PATH")
 
 # lots of this very beautiful & clean code is adapted from this repository:
 # https://github.com/icecolbeveridge/strangeAttractors
@@ -109,54 +93,8 @@ def generatePoints(s, num_iter=100000, init=(0.05, 0.05)):
     
     return out
 
-# create and save a plot
-def plot(points, s, ms = 0.05):
-    metadata = {"Title": s}
-    x,y = [p[0] for p in points], [p[1] for p in points]
-    fig, ax = plt.subplots()
-    ax.plot(x,y,'k+', markersize = ms)
-    ax.set_axis_off()
-    fig.savefig(PATH, dpi=300, metadata=metadata)
-
-# if string is given, save plot of that string
-# otherwise find a chaotic string and save plot
-def go(s = None):
+def return_valid_coefficients(s=None):
     while s == None:
         s = generateAttractor()
-        
-    out = generatePoints(s)
     
-    plot(out, s)
-
     return s
-
-# tweeting infrastructure
-def main():
-    auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
-    auth.set_access_token(KEY, SECRET)
-
-    api = tweepy.API(auth)
-    
-    try:
-        api.verify_credentials()
-        print("Authentication OK")
-    except:
-        print("Error during authentication")
-
-    try:
-        tweet = go()
-        media = api.media_upload(PATH)
-        api.update_status(status=tweet, media_ids=[media.media_id])
-        print("tweeted", tweet)
-    except:
-        pass
-
-main()
-
-# cool attractors ;)
-# VGDJVHLHQKDP
-# GAUVHRWSVXEO
-# PLQFERMYONKM
-# NEKBSTRRCHPP
-# FPOUVQXOITLA
-# AGVTEVQRUITD

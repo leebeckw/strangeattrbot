@@ -1,4 +1,5 @@
 import argparse
+import attractor
 import matplotlib.pyplot as plt
 
 LETTERS = "ABCDEFGHIJKLMNOPQRSTUVWXY"
@@ -18,18 +19,23 @@ def generatePoints(s, num_iter=100000, init=(0.05, 0.05)):
     
     for k in range(num_iter):
         x,y = nextVal(x,y,xparams), nextVal(x,y,yparams)
+        if abs(x) > 1.e5:
+            print("this set of coefficients produces a solution set that diverges to infinity")
+            return [(0,0)]
         out.append((x,y))
     
     return out
 
 def main():
     parser = argparse.ArgumentParser(prog="gen_img.py", formatter_class=argparse.RawTextHelpFormatter)
-    parser.add_argument('coefficient_string',
+    parser.add_argument('-s', '--coefficient_string',
                         nargs='+',
-                        help='coefficient string for quadratic equations')
-    parser.add_argument('filename',
+                        metavar='',
+                        help='coefficient string for quadratic equations \n if no string given, a chaotic one will be generated')
+    parser.add_argument('-f', '--filename',
                         nargs='+',
-                        help='filename for generated png image (no extension needed)')
+                        metavar='',
+                        help='filename for generated png image (no extension needed) \n if no filename is given, the coefficient string will be used')
     parser.add_argument('-m', '--marker_size',
                         nargs='+',
                         type=float,
@@ -99,15 +105,25 @@ default value: 100,000')
                         help='dpi for saved image \n \
 default value: 300')
     args = parser.parse_args()
-    points = generatePoints(args.coefficient_string[0], num_iter=args.iterations[0])
-    metadata = {"Title": args.coefficient_string[0]}
+    
+    if args.coefficient_string is None:
+        s = attractor.return_valid_coefficients()
+    else:
+        s = args.coefficient_string[0]
+    
+    points = attractor.generatePoints(s, num_iter=args.iterations[0])
+
+    metadata = {"Title": s}
     x,y = [p[0] for p in points], [p[1] for p in points]
     fig, ax = plt.subplots()
     # figure out how to have more color options? & change background color
     fmtstr = args.color[0] + args.point_shape[0]
     ax.plot(x,y,fmtstr, markersize = args.marker_size[0])
     ax.set_axis_off()
-    fn_with_extension = args.filename[0] + ".png"
+    if args.filename is None:
+        fn_with_extension = s + ".png"
+    else:
+        fn_with_extension = args.filename[0] + ".png"
     fig.savefig(fn_with_extension, dpi=args.dpi[0], metadata=metadata)
 
 if __name__ == "__main__":

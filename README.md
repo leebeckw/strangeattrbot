@@ -50,15 +50,16 @@ VKKUKGGBOLLN
 
 the file [gen_image.py](/gen_image.py) contains code to generate your own local .png files
 
-    usage: gen_img.py [-h] [-m  [...]] [-c  [...]] [-p  [...]] [-i  [...]] [-d  [...]]
-                    coefficient_string [coefficient_string ...] filename [filename ...]
-
-    positional arguments:
-        coefficient_string    coefficient string for quadratic equations
-        filename              filename for generated png image (no extension needed)
+    usage: gen_img.py [-h] [-s  [...]] [-f  [...]] [-m  [...]] [-c  [...]] [-p  [...]] [-i  [...]] [-d  [...]]
 
     optional arguments:
     -h, --help            show this help message and exit
+    -s  [ ...], --coefficient_string  [ ...]
+                            coefficient string for quadratic equations 
+                            if no string given, a chaotic one will be generated
+    -f  [ ...], --filename  [ ...]
+                            filename for generated png image (no extension needed) 
+                            if no filename is given, the coefficient string will be used
     -m  [ ...], --marker_size  [ ...]
                             marker size for plotted points 
                             default value: 0.08
