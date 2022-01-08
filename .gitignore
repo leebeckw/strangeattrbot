@@ -2,3 +2,5 @@
 .env
 out.log
 to_tweet.png
+.DS_Store
+sample_imgs/.DS_Store

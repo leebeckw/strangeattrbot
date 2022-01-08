@@ -46,6 +46,67 @@ AGVTEVQRUITD
 VKKUKGGBOLLN
 ![VKKUKGGBOLLN](https://github.com/leebeckw/strangeattrbot/blob/main/sample_imgs/tri.png?raw=true)
 
+### generate your own images
+
+the file [gen_image.py](/gen_image.py) contains code to generate your own local .png files
+
+    usage: gen_img.py [-h] [-m  [...]] [-c  [...]] [-p  [...]] [-i  [...]] [-d  [...]]
+                    coefficient_string [coefficient_string ...] filename [filename ...]
+
+    positional arguments:
+        coefficient_string    coefficient string for quadratic equations
+        filename              filename for generated png image (no extension needed)
+
+    optional arguments:
+    -h, --help            show this help message and exit
+    -m  [ ...], --marker_size  [ ...]
+                            marker size for plotted points 
+                            default value: 0.08
+    -c  [ ...], --color  [ ...]
+                            COLOR OPTIONS: 
+                                b 	  blue 
+                                g 	  green 
+                                r 	  red 
+                                c 	  cyan 
+                                m 	  magenta 
+                                y 	  yellow 
+                                k 	  black 
+                                w 	  white 
+                            default value: k
+    -p  [ ...], --point_shape  [ ...]
+                            POINT SHAPE OPTIONS: 
+                                .     point marker 
+                                ,     pixel marker 
+                                o     circle marker 
+                                v     triangle_down marker 
+                                ^ 	  triangle_up marker 
+                                < 	  triangle_left marker 
+                                > 	  triangle_right marker 
+                                1 	  tri_down marker 
+                                2 	  tri_up marker 
+                                3 	  tri_left marker 
+                                4 	  tri_right marker 
+                                8 	  octagon marker 
+                                s 	  square marker 
+                                p 	  pentagon marker 
+                                P 	  plus (filled) marker 
+                                * 	  star marker 
+                                h 	  hexagon1 marker 
+                                H 	  hexagon2 marker 
+                                + 	  plus marker 
+                                x 	  x marker 
+                                X 	  x (filled) marker 
+                                D 	  diamond marker 
+                                d 	  thin_diamond marker 
+                                | 	  vline marker 
+                                _ 	  hline marker 
+                            default value: +
+    -i  [ ...], --iterations  [ ...]
+                            number of iterations (points) 
+                            default value: 100,000
+    -d  [ ...], --dpi  [ ...]
+                            dpi for saved image 
+                            default value: 300
 #### citations
 
 Sprott, J. C. (1993). Automatic generation of strange attractors. Computers & Graphics, 17(3), 325-332.
