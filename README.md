@@ -50,6 +50,8 @@ VKKUKGGBOLLN
 
 the file [gen_image.py](/gen_image.py) contains code to generate your own local .png files
 
+you will need a working installation of python 3.x as well as the package `matplotlib`
+
     usage: gen_img.py [-h] [-s  [...]] [-f  [...]] [-m  [...]] [-c  [...]] [-p  [...]] [-i  [...]] [-d  [...]]
 
     optional arguments:
