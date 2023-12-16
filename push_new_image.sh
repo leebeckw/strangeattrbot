@@ -13,4 +13,4 @@ git push
 
 sleep 50
 
-# python3 strangeattr_arenabot.py
+python3 strangeattr_arenabot.py
