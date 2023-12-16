@@ -11,6 +11,6 @@ git commit -m "new image"
 # Push changes to the default branch (e.g., master)
 git push
 
-sleep 1m
+sleep 50
 
-python3 strangeattr_arenabot.py
+# python3 strangeattr_arenabot.py
