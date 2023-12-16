@@ -16,7 +16,7 @@ def plot(points, s, ms = 0.05):
     fig, ax = plt.subplots()
     ax.plot(x,y,'k+', markersize = ms)
     ax.set_axis_off()
-    fig.savefig('image.png', dpi=300, metadata=metadata)
+    fig.savefig('image.png', dpi=200, metadata=metadata)
 
 # if string is given, save plot of that string
 # otherwise find a chaotic string and save plot
