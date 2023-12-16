@@ -121,9 +121,9 @@ default value: 300')
     ax.plot(x,y,fmtstr, markersize = args.marker_size[0])
     ax.set_axis_off()
     if args.filename is None:
-        fn_with_extension = s + ".png"
+        fn_with_extension = "generated_imgs/" + s + ".png"
     else:
-        fn_with_extension = args.filename[0] + ".png"
+        fn_with_extension = "generated_imgs/" + args.filename[0] + ".png"
     fig.savefig(fn_with_extension, dpi=args.dpi[0], metadata=metadata)
 
 if __name__ == "__main__":
