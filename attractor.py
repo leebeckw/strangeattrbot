@@ -25,7 +25,7 @@ def generateAttractor(init = (0.05,0.05) ):
     x,y = init
 
     # initial iteration to check for divergence to infinity
-    for i in range(100):
+    for i in range(1000):
         x,y = nextVal(x,y,xparams), nextVal(x,y,yparams)
         
         # check for divergence to infinity

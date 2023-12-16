@@ -3,7 +3,7 @@
 python3 gen_img_for_gh.py
 
 # Navigate to the directory of your Git repository
-cd ~/lbeckwith/strangeattrbot
+cd /strangeattrbot
 
 # Add all changes to the staging area
 git add .
