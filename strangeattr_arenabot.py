@@ -11,7 +11,7 @@ PAT = os.getenv("PERSONAL_ACCESS_TOKEN")
 
 response = requests.post('https://api.are.na/v2/channels/strange-attractors-ceel2vxiqn0/blocks/', \
                   data={'source': 'https://media.githubusercontent.com/media/leebeckw/strangeattrbot/main/image.png'}, \
-                    headers={'Authorization': 'Bearer ' + PAT, 'Cache-Control': 'no-cache', 'Pragma': 'no-cache'})
+                    headers={'Authorization': 'Bearer ' + PAT, 'Cache-Control': 'no-cache'})
 
 
 # Check if the request was successful (status code 200)
