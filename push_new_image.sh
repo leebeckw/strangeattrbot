@@ -2,9 +2,6 @@
 
 python3 gen_img_for_gh.py
 
-# Navigate to the directory of your Git repository
-cd /strangeattrbot
-
 # Add all changes to the staging area
 git add .
 
@@ -13,3 +10,7 @@ git commit -m "new image"
 
 # Push changes to the default branch (e.g., master)
 git push
+
+sleep 30
+
+python3 strangeattr_arenabot.py

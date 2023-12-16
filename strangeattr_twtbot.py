@@ -58,7 +58,7 @@ def main():
     except:
         pass
 
-main()
+# main()
 
 # cool attractors ;)
 # VGDJVHLHQKDP
