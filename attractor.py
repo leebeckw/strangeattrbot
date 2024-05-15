@@ -18,7 +18,7 @@ def nextVal( x, y, params ):
 def generateAttractor(init = (0.05,0.05) ):
     attrString = generateAttrString(12)
     
-    print(attrString)
+    # print(attrString)
     xparams = list(map(letterToNumber, attrString[:6]))
     yparams = list(map(letterToNumber, attrString[6:]))
 
@@ -53,7 +53,7 @@ def generateAttractor(init = (0.05,0.05) ):
     
     # check for chaotic behavior
     if lyapunov > 0.001:
-        print(lyapunov)
+        print(lyapunov, attrString)
         return attrString
     else:
         return None
@@ -62,7 +62,11 @@ def generateAttractor(init = (0.05,0.05) ):
 def calculateDistance(x1, y1, x2, y2):
     xdist_n = abs(x2 - x1)
     ydist_n = abs(y2 - y1)
-    return sqrt(xdist_n**2 + ydist_n**2)
+    try:
+        return sqrt(xdist_n**2 + ydist_n**2)
+    except OverflowError:
+        return 0
+    # return sqrt(xdist_n**2 + ydist_n**2)
 
 # calculate a term of the sum for the lyapunov exponent
 def calculateLyapunov(x1, y1, x2, y2, xparams, yparams):
@@ -94,7 +98,10 @@ def generatePoints(s, num_iter=100000, init=(0.05, 0.05)):
     return out
 
 def return_valid_coefficients(s=None):
+    j = 0
     while s == None:
         s = generateAttractor()
+        j += 1
     
+    print("after " + str(j) + " iterations")
     return s

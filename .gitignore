@@ -5,3 +5,4 @@ to_tweet.png
 .DS_Store
 sample_imgs/.DS_Store
 push_new_image.sh
+generated_imgs/

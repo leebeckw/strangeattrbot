@@ -127,4 +127,6 @@ default value: 300')
     fig.savefig(fn_with_extension, dpi=args.dpi[0], metadata=metadata)
 
 if __name__ == "__main__":
-    main()
+    for i in range(50):
+        print("*** attractor " + str(i+1) + " of 50 ***")
+        main()
