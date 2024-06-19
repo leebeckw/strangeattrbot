@@ -8,7 +8,9 @@ letterToNumber = lambda x: 0.1*(LETTERS.index(x) - 12)
 
 def nextVal( x, y, params ):
     a,b,c,d,e,f = params
-    return a + b*x + c*x*x + d*x*y + e*y + f*y*y
+    return a + b*x*y + c*x*x*y + d*x*x*y*y + e*x*y*y*y + f*y*y*y
+    # return a + b*x*x + c*x*x*x + d*x*x*y + e*y*y + f*y*y*y
+    # return a + b*x + c*x*x + d*x*y + e*y + f*y*y
 
 def generatePoints(s, num_iter=100000, init=(0.05, 0.05)):
     xparams = list(map(letterToNumber, s[:6]))
@@ -119,6 +121,7 @@ default value: 300')
     # figure out how to have more color options? & change background color
     fmtstr = args.color[0] + args.point_shape[0]
     ax.plot(x,y,fmtstr, markersize = args.marker_size[0])
+    # ax.axis("square")
     ax.set_axis_off()
     if args.filename is None:
         fn_with_extension = "generated_imgs/" + s + ".png"
@@ -127,6 +130,7 @@ default value: 300')
     fig.savefig(fn_with_extension, dpi=args.dpi[0], metadata=metadata)
 
 if __name__ == "__main__":
-    for i in range(50):
-        print("*** attractor " + str(i+1) + " of 50 ***")
+    n = 10
+    for i in range(n):
+        print("*** attractor " + str(i+1) + " of " + str(n) + " ***")
         main()
